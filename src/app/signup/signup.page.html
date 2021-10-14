@@ -1,0 +1,58 @@
+<ion-header translucent="true">
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="medialogin">
+    <h1 class="center">Signup</h1>
+    <br>
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/user.png" alt="" width="20px">
+      </div>
+      <input type="text" placeholder="Username" class="valueInput" [(ngModel)]="signupData.username">
+    </div>
+
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/email.png" alt="" width="20px">
+      </div>
+      <input type="text" placeholder="Email" class="valueInput" [(ngModel)]="signupData.email">
+    </div>
+
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/phone.png" alt="" width="20px">
+      </div>
+      <input type="text" placeholder="Phone" class="valueInput" [(ngModel)]="signupData.phone">
+    </div>
+
+
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/password.png" alt="" width="20px">
+      </div>
+      <input type="text" placeholder="Password" class="valueInput" [(ngModel)]="signupData.password">
+    </div>
+
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/password.png" alt="" width="20px">
+      </div>
+      <input type="password" placeholder="Confirm Password" class="valueInput" [(ngModel)]="signupData.confirmpassword">
+    </div>
+    <br>
+    <ion-radio-group [(ngModel)]="signupData.type">
+
+    </ion-radio-group>
+    <br>
+    <button ion-button class="signinBtn" (click)="login()">Create</button>
+    <br>
+    <br>
+    <div class="create" (click)="login()">Already have an account? &nbsp;<span class="spancreate">Login
+        here</span>
+    </div>
+  </div>
+</ion-content>

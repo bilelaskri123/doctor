@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pagename }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button expand="block" fill="clear" (click)="notification()">
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides paginationType="bullets" autoplay="2000" loop="true" speed="500" pager="true">
+    <ion-slide *ngFor="let x of imgArray">
+      <img src="{{x}}" onerror="this.src='assets/imgs/no_img.png'" class="sliderimg">
+    </ion-slide>
+  </ion-slides>
+  <ion-searchbar placeholder="search clinics, doctors or specialities" [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
+  <ion-row class="mainRow" (click)="clinics('Cheek dimple creation')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/1.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Cheek dimple creation</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Cheek fat removal')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/2.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Cheek fat removal</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Cheek augmentation')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/3.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Cheek augmentation</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Eyelid surgery')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/4.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Eyelid surgery</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Facelift')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/5.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Facelift</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Hair transplant')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/6.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Hair transplant</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Neck lift')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/7.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Neck lift</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Otoplastry')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/8.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Otoplastry</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+
+  <ion-row class="mainRow" (click)="clinics('Rhinoplast')">
+    <ion-col size="2" class="vertical_centr"><img src="assets/imgs/9.png" alt="" class="catimg"></ion-col>
+    <ion-col size="8" class="font_20 vertical_centrC">Rhinoplast</ion-col>
+    <ion-col size="2" class="vertical_centr"><ion-icon name="chevron-forward-outline" class="font_25"></ion-icon></ion-col>
+  </ion-row>
+</ion-content>

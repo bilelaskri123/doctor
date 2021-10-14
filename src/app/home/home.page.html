@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button expand="block" fill="clear" (click)="notification()">
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides paginationType="bullets" autoplay="1000" loop="true" speed="500" pager="true">
+    <ion-slide *ngFor="let x of imgArray">
+      <img src="{{x}}" onerror="this.src='assets/imgs/no_img.png'" class="sliderimg">
+    </ion-slide>
+  </ion-slides>
+  <ion-searchbar placeholder="search clinics, doctors or specialities" [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
+  <div cards>
+    <div class="grid-full">
+      <ion-row>
+        <ion-col>
+          <ion-card (click)="SubCat('Brain')">
+            <img src="assets/imgs/1.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Brain</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Dentistry')">
+            <img src="assets/imgs/2.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Dentistry</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Digestive')">
+            <img src="assets/imgs/3.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Digestive</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Facial')">
+            <img src="assets/imgs/4.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Facial</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Heart')">
+            <img src="assets/imgs/5.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Heart</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Abdomen')">
+            <img src="assets/imgs/6.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Abdomen</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Ointment')">
+            <img src="assets/imgs/7.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Ointment</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Skin')">
+            <img src="assets/imgs/8.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Skin</h6>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="SubCat('Hand & Legs')">
+            <img src="assets/imgs/9.png" alt="" class="catimg">
+            <h6 class="center margin_t_15">Hand & Legs</h6>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pagename }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="bgwhite">
+    <ion-card-header class="nopadding">
+      <ion-row class="mainRow">
+        <ion-col size="3" class="vertical_centr"><img src="assets/imgs/boy.png" alt="" class="catimg"></ion-col>
+        <ion-col size="9" class="font_20">
+          <div>Dr Vikas Desai</div>
+
+          <div class="pw_star">
+            <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+            <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+            <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+            <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+            <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+            <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+            <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+            <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+            <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+            <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+            <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+
+    <ion-card-content>
+      <table class="tablearrange">
+        <tbody>
+          <tr>
+            <td class="firstcall">
+              <ion-icon name="navigate-outline"></ion-icon>
+            </td>
+            <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+  </ion-card>
+
+  <h6 class="pl15">Appoinments</h6>
+  <div class="scrollmenu">
+    <table>
+      <tr>
+        <td *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]; let i = index" style="width:100px !important">
+          <button shape="round" [ngClass]="(selected == i ) ? 'seldate' : 'date'" (click)="selectedbtn(i)">{{i+1}}
+            Jan</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+  
+  <h6 class="pl15">Available appoinments</h6>
+  <div class="scrollmenu">
+    <table>
+      <tr>
+        <td *ngFor="let item of [1,2,3,4,5,6,7,8]; let i = index" style="width:100px !important">
+          <div shape="round" [ngClass]="(selectedtime == i ) ? 'seltime' : 'time'" (click)="selectedtimebtn(i)">
+            <div class="vertical_centrC maindiv">
+              <div class="whitediv vertical_centrC">
+              <div>From 0{{i+1}}:00 to 0{{i+2}}:00</div>
+            </div>
+            <div class="bookBtn">Book</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+<br>
+<br>
+  <ion-card class="bgwhite">
+    <ion-row>
+      <ion-col size="9" class="vertical_centrC">
+        <ion-input placeholder="Enter Voucher Code"></ion-input>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button class="applyBtn">Apply</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+<br>
+  <ion-card class="bgwhite pad15">
+    <ion-row>
+      <ion-col class="vertical_centrC">
+       Fee
+      </ion-col>
+      <ion-col  class="ion-text-end">
+       250 SAR
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-button class="applyBtn" (click)="book()">Book</ion-button>
+  </ion-card>
+  <br><br><br><br>
+</ion-content>

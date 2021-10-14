@@ -1,0 +1,608 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>favourite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides paginationType="bullets" autoplay="2000" loop="true" speed="500" pager="true">
+    <ion-slide *ngFor="let x of imgArray">
+      <img src="{{x}}" onerror="this.src='assets/imgs/no_img.png'" class="sliderimg">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-segment [(ngModel)]="Types" color="primary">
+    <ion-segment-button value="1">
+      Clinics
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      Doctors
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+  <div [ngSwitch]="Types">
+    <ion-list *ngSwitchCase="'1'">
+      <ion-row class="mainRow" (click)="myFunction('1a')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/1.png" alt="" class="catimg"></ion-col>
+        <ion-col size="7" class="font_20 vertical_centrC">Dedicated eye clinics</ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="1a" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">Doctors</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Dedicated eye clinics')">Book</ion-button><br>
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('2a')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/2.png" alt="" class="catimg"></ion-col>
+        <ion-col size="7" class="font_20 vertical_centrC">Private eye clinics</ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="2a" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">Doctors</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Private eye clinics')">Book</ion-button><br>
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('3a')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/3.png" alt="" class="catimg"></ion-col>
+        <ion-col size="7" class="font_20 vertical_centrC">Elite clinic doctors</ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="3a" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">Doctors</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Elite clinic doctors')">Book</ion-button><br>
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('4a')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/4.png" alt="" class="catimg"></ion-col>
+        <ion-col size="7" class="font_20 vertical_centrC">Eye care clinics</ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="4a" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">Doctors</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Eye care clinics')">Book</ion-button><br>
+      </div>
+    </ion-list>
+
+
+
+
+
+
+
+
+    <ion-list *ngSwitchCase="'2'">
+      <ion-row class="mainRow" (click)="myFunction('1b')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/boy.png" alt="" class="catimg"></ion-col>
+        <!-- <ion-col size="8" class="font_20 vertical_centrC">Doctor Hamdy ibrahim</ion-col> -->
+        <ion-col size="7" class="font_20 ">
+          <div>Doctor Hamdy ibrahim</div>
+          <div><small>Eye specialist</small></div>
+        </ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="1b" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">clinics</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Doctor Hamdy ibrahim')">Book</ion-button><br>
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('2b')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/boy.png" alt="" class="catimg"></ion-col>
+        <ion-col size="7" class="font_20 ">
+          <div>Dr. Chirag pathak</div>
+          <div><small>Dental specialist</small></div>
+        </ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="2b" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">clinics</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Dr. Chirag pathak')">Book</ion-button><br>
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('3b')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/boy.png" alt="" class="catimg"></ion-col>
+        <!-- <ion-col size="8" class="font_20 vertical_centrC">Dr Vikas Desai</ion-col> -->
+        <ion-col size="7" class="font_20 ">
+          <div>Dr Vikas Desai</div>
+          <div><small>Surgen</small></div>
+        </ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="3b" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">clinics</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Dr Vikas Desai')">Book</ion-button><br>
+
+      </div>
+
+      <ion-row class="mainRow" (click)="myFunction('4b')">
+        <ion-col size="2" class="vertical_centr"><img src="assets/imgs/boy.png" alt="" class="catimg"></ion-col>
+        <!-- <ion-col size="8" class="font_20 vertical_centrC">Dr. Shruti Sharma</ion-col> -->
+        <ion-col size="7" class="font_20 ">
+          <div>Dr. Shruti Sharma</div>
+          <div><small>Skin specialist</small></div>
+        </ion-col>
+        <ion-col size="1" class="vertical_centr">
+          <ion-icon name="close-outline" class="font_25 colorred"></ion-icon>
+        </ion-col>
+
+        <ion-col size="2" class="vertical_centr">
+          <ion-icon name="chevron-down-outline" class="font_25"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div id="4b" class="notDisplay mainRow">
+        <ion-button shape="round" fill="outline" class="dbtn">clinics</ion-button>
+        <table class="tablearrange">
+          <tbody>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="navigate-outline"></ion-icon>
+              </td>
+              <td>591 Memorial Dr, Chicopee MA 1020 591 Memorial Dr, Chicopee MA 1020 <br>
+                <ion-button shape="round" class="dbtn direction">
+                  <ion-icon name="compass-outline"></ion-icon> Directions
+                </ion-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="call-outline"></ion-icon>
+              </td>
+              <td>+91457858542142</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="mail-outline"></ion-icon>
+              </td>
+              <td>testinfo@gmail.com</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="card-outline"></ion-icon>
+              </td>
+              <td>Fees: 150 SAR</td>
+            </tr>
+            <tr>
+              <td class="firstcall">
+                <ion-icon name="time-outline"></ion-icon>
+              </td>
+              <td>Waiting time: 20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <ion-item class="pw_star">
+          <ion-icon *ngIf="myRating>=1" name="star" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating>=2" name="star" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating>=3" name="star" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating>=4" name="star" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating>=5" name="star" (click)="rating(5)"></ion-icon>
+          <ion-icon *ngIf="myRating%1!=0" name="star-half"></ion-icon>
+          <ion-icon *ngIf="myRating==0" name="star-outline" (click)="rating(1)"></ion-icon>
+          <ion-icon *ngIf="myRating<=1" name="star-outline" (click)="rating(2)"></ion-icon>
+          <ion-icon *ngIf="myRating<=2" name="star-outline" (click)="rating(3)"></ion-icon>
+          <ion-icon *ngIf="myRating<=3" name="star-outline" (click)="rating(4)"></ion-icon>
+          <ion-icon *ngIf="myRating<=4" name="star-outline" (click)="rating(5)"></ion-icon>
+        </ion-item>
+        <br>
+        <ion-button shape="round" class="btn" (click)="booking('Dr. Shruti Sharma')">Book</ion-button><br>
+
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

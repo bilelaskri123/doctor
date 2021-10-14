@@ -1,0 +1,225 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.center{text-align: center !important}
+.center_box{margin: auto;display: table}    
+.padding_l_15{padding-left: 15px !important;}
+.padding_l_10{padding-left: 10px !important;}
+.padding_0{padding: 0px !important}
+.padd10{ padding: 10px }
+.padding{padding: 16px !important}
+.margin_t_5{margin-top: 5px !important}
+.margin_t_10{margin-top: 10px !important}
+.margin_t_12{margin-top: 12px !important}
+.margin_t_15{margin-top: 15px !important}
+.margin_t_17{margin-top: 17px !important}
+.margin_t_20{margin-top: 20px !important}
+.margin_t_30{margin-top: 30px !important}
+.margin_t_35{margin-top: 35px !important}
+.margin_t_40{margin-top: 40px !important}
+.margin_t_50{margin-top: 50px !important}
+.margin_t_60{margin-top: 60px !important}
+.margin_t_80{margin-top: 80px !important}
+.margin_t_90{margin-top: 90px !important}
+.mt_20{ margin-top: 20% }
+.boxshadow_none{box-shadow: none !important}
+.ht_25{height: 25px !important}
+.ht_50{height: 50px !important}
+.ht_75{height: 75px !important}
+.ht_100{height: 100px !important}
+.font_10{font-size: 10px !important}
+.font_12{font-size: 12px !important}
+.font_14{font-size: 14px !important}
+.font_15{font-size: 15px !important}
+.font_20{font-size: 20px !important}
+.font_25{font-size: 25px !important}
+.font_30{font-size: 30px !important}
+.font_35{font-size: 35px !important}
+.font_50{font-size: 50px !important}
+.bg_clr{background: linear-gradient(to left, #005856 0%, #005074 100%);}
+.update-btn{float: right;text-decoration: none;font-size: x-large;color: #515252;}
+.w90{width: 90% !important;margin: auto !important}
+.border_35{border-radius: 35px !important}
+.logo{
+    margin-top: 5% !important;
+    width:80% !important;
+    display: block;
+    margin: auto;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 0px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 8px;
+}
+
+
+.passwordIcon{
+    font-size:2rem !important;
+    position: relative !important;
+    top: 6px !important;
+    margin: 0 auto !important;
+ }
+    
+ .vertical_centrC{
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     -webkit-align-items: center;
+     align-items: center;
+ }
+ .vertical_centr{
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     -webkit-justify-content: center;
+     justify-content: center;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     -webkit-align-items: center;
+     align-items: center;
+ }
+
+   @font-face {
+     font-family: 'Comfortaa_Bold';
+     src: url('assets/fonts/Comfortaa_Bold.ttf') format('truetype');
+     letter-spacing: 1px !important;
+     font-weight: normal;
+     font-style: normal;
+     font-size:12px;
+   }
+   
+   @font-face {
+     font-family: 'Comfortaa_Regular';
+     src: url('assets/fonts/Comfortaa_Bold.ttf') format('truetype');
+     letter-spacing: 1px !important;
+     font-weight: normal;
+     font-style: normal;
+     font-size:12px;
+   }
+
+   * {
+     font-family: 'Comfortaa_Regular'    ;
+   }
+   
+ .toast-md .toast-wrapper.toast-middle{
+     width: 80%;
+     height: 70px;
+     line-height: 35px;
+     background-image: -webkit-gradient(linear, right top, left top, from(#333ae9), to(#6a11bf));
+     background-image: linear-gradient(-90deg, #333ae9, #6a11bf);
+     text-align: center;
+     font-weight: 700;
+     border-radius: 35px;
+ }
+ .toast-ios .toast-wrapper.toast-middle{
+     width: 80%;
+     height: 70px;
+     line-height: 35px;
+     background-image: -webkit-gradient(linear, right top, left top, from(#333ae9), to(#6a11bf));
+     background-image: linear-gradient(-90deg, #333ae9, #6a11bf);
+     text-align: center;
+     font-weight: 700;
+     border-radius: 35px;
+ }
+ 
+ .toast-md .toast-message{
+     color: #fff;
+     padding: none;
+     font-size: 16px;
+ }
+ 
+ .toast-ios .toast-message{
+     color: #fff;
+     padding: none;
+     font-size: 16px;
+ }
+ .text-input-md,.text-input-ios{
+     font-size: 15px;
+ }
+ .loader_class{
+     height: 50px;
+ }
+ 
+ @media only screen 
+     and (device-width : 375px) 
+     and (device-height : 812px) 
+     and (-webkit-device-pixel-ratio : 3) {
+         .logo{ margin-top: 25% !important;}
+    }
+ 
+ @media only screen 
+     and (device-width : 375px) 
+     and (device-height : 667px) 
+     and (-webkit-device-pixel-ratio : 2) { }
+ 
+ @media only screen 
+     and (device-width : 414px) 
+     and (device-height : 736px) 
+     and (-webkit-device-pixel-ratio : 3) { }
+  
+.email{
+    margin : 0px
+}
+.uname{
+    margin-top: 5px;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.toprow{
+    background-color: lightgrey;
+}
+.logoutBtn{
+    float: right;
+    color: #fff;
+    text-transform: capitalize;
+}

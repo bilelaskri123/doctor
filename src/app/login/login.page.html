@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="medialogin">
+    <br>
+    <br>
+    <img src="assets/imgs/logo.png" class="logoImg" alt="">
+    <h1 class="center">Welcome</h1>
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/user.png" alt="" width="20px">
+      </div>
+      <input type="text" placeholder="Email/Phone number" class="valueInput" [(ngModel)]="loginData.email">
+    </div>
+    <div style="position: relative">
+      <div class="inputImg vertical_centr">
+        <img src="assets/imgs/password.png" alt="" width="20px">
+      </div>
+      <input type="password" placeholder="Password" class="valueInput" [(ngModel)]="loginData.password">
+    </div>
+    <div class="forgot" (click)="forgotpassword()">Forgot Password?</div>
+    <br>
+    <br>
+    <button ion-button class="signinBtn" (click)="home()">Log In</button>
+    <br>
+    <br>
+
+    <ion-row>
+      <ion-col><button ion-button class="googleBtn" (click)="login()">Google</button></ion-col>
+      <ion-col><button ion-button class="fbBtn" (click)="login()">Facebook</button></ion-col>
+    </ion-row>
+    <br>
+    <br>
+    <div class="create" (click)="signup()">Create new account? &nbsp;<span class="spancreate">Sign up</span>
+    </div>
+  </div>
+</ion-content>
